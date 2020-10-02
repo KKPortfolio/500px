@@ -7,6 +7,11 @@
 
 import UIKit
 
-class MainLayout: UICollectionViewLayout {
+protocol MainLayoutDelegate {
+    func collectionView(collectionView: UICollectionView, indexPath: IndexPath) -> CGSize
+}
 
+class MainLayout: UICollectionViewLayout {
+   
+    
 }

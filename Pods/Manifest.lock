@@ -3,20 +3,24 @@ PODS:
   - Kingfisher (5.15.5):
     - Kingfisher/Core (= 5.15.5)
   - Kingfisher/Core (5.15.5)
+  - RNCryptor (5.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
   - Kingfisher (~> 5.0)
+  - RNCryptor (~> 5.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Kingfisher
+    - RNCryptor
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   Kingfisher: e3ec347a5ab8817b7585ef46923a2d2b9a7d8fbe
+  RNCryptor: a369134686cd2ad391323cc856b62e591193ba79
 
-PODFILE CHECKSUM: c7b64435bfe7883e6c56b51abb97df1abffc8a96
+PODFILE CHECKSUM: 55aa19205a1c25e5a4a9009834180c2b96bc7b99
 
 COCOAPODS: 1.9.3

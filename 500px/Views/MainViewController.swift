@@ -6,24 +6,38 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MainViewController: UIViewController {
 
+    //    Variables
+    var viewModel = ViewModel()
+    @IBOutlet weak var mainCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        viewModel.photos = [Photo]()
+        viewModel.getConsumerKey()
+        viewModel.getPhotos(resetPhotos: true, completion: nil)
+        if (viewModel.didGetPhoto!) {
+            self.mainCollectionView.layoutIfNeeded()
+            self.mainCollectionView.reloadData()
+        }
     }
+}
+
+extension MainViewController {
     
+    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension MainViewController: MainLayoutDelegate {
+    func collectionView(collectionView: UICollectionView, indexPath: IndexPath) -> CGSize {
+        return viewModel.photos[indexPath.item].getPhotoSize()
     }
-    */
-
+    func setupCollectionView(){
+        if let layout = mainCollectionView.collectionViewLayout as? MainLayout {
+            layout.delegate = self
+        }
+    }
 }
