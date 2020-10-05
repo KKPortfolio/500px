@@ -66,6 +66,14 @@ class MainLayout: UICollectionViewLayout {
         }
     }
     
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        return self.itemAttributes
+    }
+    
+    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        guard indexPath.item < self.itemAttributes.count else { return nil }
+        return self.itemAttributes[indexPath.item]
+    }
     
     private func shortestColumnIndex() -> Int {
         return columnOffsets.firstIndex(of: columnOffsets.min()!)!
@@ -82,15 +90,4 @@ class MainLayout: UICollectionViewLayout {
     private func canDoubleCellWidth(at index: Int, indexPath: IndexPath) -> Bool {
         return (index < self.columnsCount - 1) && self.columnOffsets[index] == self.columnOffsets[index+1] && indexPath.item % 10 < doubleCellProbability
     }
-    
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        return self.itemAttributes
-    }
-    
-    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        guard indexPath.item < self.itemAttributes.count else { return nil }
-        return self.itemAttributes[indexPath.item]
-    }
-    
-    
 }

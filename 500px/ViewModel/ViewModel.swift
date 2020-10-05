@@ -29,23 +29,4 @@ class ViewModel {
         KeyGenerator.shared.decryptKey()
         self.consumerKey = String(decoding: KeyGenerator.shared.originalKey!, as: UTF8.self)
     }
-    
-//    get Photos from API
-    
-    func getPhotos(resetPhotos: Bool, completion: (()->())?) {
-        NetworkManager.getPhotos(consumerKey: consumerKey, page: page, rpp: rpp, photoSizes: photoSizes) { (retrievedPhotos, error) in
-            if (retrievedPhotos != nil) {
-                self.page += 1
-                resetPhotos ? self.photos = retrievedPhotos : self.photos.append(contentsOf: retrievedPhotos!)
-                self.didGetPhoto = true
-            } else {
-                print("Could not retrieve photos!")
-                self.didGetPhoto = false
-            }
-            completion?()
-        }
-    }
-    
-    
-    
 }

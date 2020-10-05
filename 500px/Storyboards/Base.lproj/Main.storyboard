@@ -23,7 +23,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewLayout key="collectionViewLayout" id="7I8-bq-MSN" customClass="MainLayout" customModule="_00px" customModuleProvider="target"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="PPf-Qd-M9H">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="PPf-Qd-M9H" customClass="MainCollectionViewCell" customModule="_00px" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Bv1-Z6-TGC">
@@ -41,6 +41,9 @@
                                                 <constraint firstItem="lAR-fC-dBc" firstAttribute="centerX" secondItem="Bv1-Z6-TGC" secondAttribute="centerX" id="wuX-bh-Ldv"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageView" destination="lAR-fC-dBc" id="pUn-np-i8W"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
