@@ -60,11 +60,12 @@
                     <navigationItem key="navigationItem" id="7Lw-6Z-en4"/>
                     <connections>
                         <outlet property="mainCollectionView" destination="OI1-vd-GBz" id="Yx4-Mg-Feh"/>
+                        <segue destination="jlz-RT-eJN" kind="show" identifier="toPhotoDetail" id="Kzs-wB-vJ6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GM8-KL-aGi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="528.98550724637687" y="-178.125"/>
+            <point key="canvasLocation" x="491" y="-178"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pci-Gs-ULK">
@@ -84,8 +85,73 @@
             </objects>
             <point key="canvasLocation" x="-381.15942028985512" y="-178.125"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="QyU-Ms-Wbg">
+            <objects>
+                <viewController id="jlz-RT-eJN" customClass="DetailViewController" customModule="_00px" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bbt-VU-cUG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EwP-Se-NiB">
+                                <rect key="frame" x="20" y="88" width="374" height="427"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDI-8B-cKm">
+                                <rect key="frame" x="20" y="523" width="374" height="339"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="U6L-Fv-NxI">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="339"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hgg-Ol-5Lf">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="339"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <color key="textColor" systemColor="labelColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Hgg-Ol-5Lf" firstAttribute="centerX" secondItem="U6L-Fv-NxI" secondAttribute="centerX" id="2ee-GF-lMD"/>
+                                        <constraint firstItem="Hgg-Ol-5Lf" firstAttribute="top" secondItem="U6L-Fv-NxI" secondAttribute="top" id="RkN-pg-Xak"/>
+                                        <constraint firstItem="Hgg-Ol-5Lf" firstAttribute="leading" secondItem="U6L-Fv-NxI" secondAttribute="leading" id="YfA-eR-zRv"/>
+                                        <constraint firstItem="Hgg-Ol-5Lf" firstAttribute="centerY" secondItem="U6L-Fv-NxI" secondAttribute="centerY" id="jhG-hk-OEO"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="339" id="G99-c8-tkh"/>
+                                </constraints>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="X1y-9L-a9u"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EwP-Se-NiB" firstAttribute="trailing" secondItem="bbt-VU-cUG" secondAttribute="trailingMargin" id="5PQ-HG-3dO"/>
+                            <constraint firstItem="cDI-8B-cKm" firstAttribute="top" secondItem="EwP-Se-NiB" secondAttribute="bottom" constant="8" id="Kia-7Q-LL7"/>
+                            <constraint firstItem="EwP-Se-NiB" firstAttribute="leading" secondItem="bbt-VU-cUG" secondAttribute="leadingMargin" id="Pkc-Io-ZjY"/>
+                            <constraint firstItem="EwP-Se-NiB" firstAttribute="top" secondItem="X1y-9L-a9u" secondAttribute="top" id="XRx-i9-1xe"/>
+                            <constraint firstItem="EwP-Se-NiB" firstAttribute="trailing" secondItem="cDI-8B-cKm" secondAttribute="trailing" id="Z28-9y-a5A"/>
+                            <constraint firstItem="EwP-Se-NiB" firstAttribute="leading" secondItem="cDI-8B-cKm" secondAttribute="leading" id="e07-ml-g2t"/>
+                            <constraint firstItem="cDI-8B-cKm" firstAttribute="bottom" secondItem="X1y-9L-a9u" secondAttribute="bottom" id="sdZ-q0-aF7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="APx-WG-1k5"/>
+                    <connections>
+                        <outlet property="hidingView" destination="cDI-8B-cKm" id="mah-FY-DMj"/>
+                        <outlet property="imageView" destination="EwP-Se-NiB" id="8D2-yp-h1F"/>
+                        <outlet property="textView" destination="Hgg-Ol-5Lf" id="WfU-pl-4e1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VaJ-Mx-Ksi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1357.9710144927537" y="-178.125"/>
+        </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

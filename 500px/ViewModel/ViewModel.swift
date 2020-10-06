@@ -20,7 +20,7 @@ class ViewModel {
     var thumbnailSize: [CGSize]!
     var photoSizes = [3,4]
     var isLoading = false
-    var selectedIndex: Int?
+    var selectedRow: Int?
     var didGetPhoto: Bool?
     
 //    to load consumer key from crypted key

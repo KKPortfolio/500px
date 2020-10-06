@@ -20,15 +20,12 @@ class MainViewController: UIViewController {
         viewModel.photos = [Photo]()
         viewModel.getConsumerKey()
         self.getPhotos(resetPhotos: true, completion: nil)
-//        viewModel.getPhotos(resetPhotos: true, completion: nil)
-//        print(self.viewModel.photos[0].name)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.updateCollectionViewLayout()
     }
-    
 }
 
 extension MainViewController {
@@ -48,6 +45,9 @@ extension MainViewController {
             completion?()
         }
     }
+    
+    
+    
 }
 
 extension MainViewController: MainLayoutDelegate {
@@ -86,6 +86,19 @@ extension MainViewController: UICollectionViewDelegate {
             self.getPhotos(resetPhotos: false, completion: {
                 self.viewModel.isLoading = false
             })
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.viewModel.selectedRow = indexPath.row
+        performSegue(withIdentifier: "toPhotoDetail", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toPhotoDetail" {
+            let destinationViewController = segue.destination as! DetailViewController
+            if self.viewModel.photos != nil && self.viewModel.selectedRow != nil && self.viewModel.selectedRow! < self.viewModel.photos!.count {
+                destinationViewController.photo = self.viewModel.photos![self.viewModel.selectedRow!]
+            }
         }
     }
 }
