@@ -10,7 +10,6 @@ import Kingfisher
 
 class MainViewController: UIViewController {
 
-    //    Variables
     var viewModel = ViewModel()
     @IBOutlet weak var mainCollectionView: UICollectionView!
     
@@ -71,7 +70,6 @@ extension MainViewController: MainLayoutDelegate {
 extension MainViewController: UICollectionViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         self.viewModel.lastIndexPath = self.mainCollectionView.indexPathsForVisibleItems.last
-        
         // load next page when scrollView reaches the end
         guard self.viewModel.isLoading == false else { return }
         var offset:CGFloat = 0
@@ -85,11 +83,12 @@ extension MainViewController: UICollectionViewDelegate {
             })
         }
     }
-    
+//    when cell is selected, it goes to the detailView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.viewModel.selectedRow = indexPath.row
         performSegue(withIdentifier: "toPhotoDetail", sender: self)
     }
+//    sends photo data of the selected cell
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toPhotoDetail" {
             let destinationViewController = segue.destination as! DetailViewController
@@ -116,5 +115,3 @@ extension MainViewController: UICollectionViewDataSource {
         return 1
     }
 }
-
-

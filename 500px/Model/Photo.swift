@@ -8,8 +8,6 @@
 import UIKit
 
 class Photo {
-
-    //    Variables
     var name: String?
     var description: String?
     var images: [ImageObject]
@@ -40,16 +38,7 @@ class Photo {
         }
     }
     
-    func getPhotoSize() -> CGSize {
-        if let width = attributes[PhotoFields.width] as? Int {
-            if let height = attributes[PhotoFields.height] as? Int {
-                return CGSize(width: width, height: height)
-            }
-        }
-//        if not given
-        return CGSize(width: 180, height: 180)
-    }
-    
+    //    To parse "images" under "photos"
     func parseImages(imagesDictionary: [[String:Any]]) throws {
         for image in imagesDictionary {
             do {
@@ -64,6 +53,17 @@ class Photo {
         }
     }
     
+    func getPhotoSize() -> CGSize {
+        if let width = attributes[PhotoFields.width] as? Int {
+            if let height = attributes[PhotoFields.height] as? Int {
+                return CGSize(width: width, height: height)
+            }
+        }
+        //        if not given from JSON
+        return CGSize(width: 180, height: 180)
+    }
+    
+    //    To parse "photos" from the dictionary
     class func parsePhotos(dictionary: [String:Any]) throws -> [Photo]? {
         if let photos = dictionary[QueryFields.photos] as? [Any] {
             var results = [Photo]()

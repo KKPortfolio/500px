@@ -8,17 +8,13 @@
 import Foundation
 import RNCryptor
 
-//  Reads crypted key (cannot be read by human) from bundle then decrypts it back into consumer key
+//  Reads crypted key (cannot be read by human) from bundle then decrypts it back into consumer key provided
 class KeyGenerator {
-
-//    Make it singleton
     static let shared = KeyGenerator()
-    
-//    variables
     var encryptedKey: Data?
     var originalKey: Data?
     
-//    functions
+//    Reading the file from Bundle
     func readFile(){
         let path = Bundle.main.path(forResource: "cryptedKey", ofType: "txt")
         do {

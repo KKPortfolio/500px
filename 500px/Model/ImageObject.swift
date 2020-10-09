@@ -8,8 +8,6 @@
 import UIKit
 
 public class ImageObject {
-    
-//    Variables
     var url:String
     var format: String
     var size: Int

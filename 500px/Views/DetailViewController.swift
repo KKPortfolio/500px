@@ -78,7 +78,6 @@ extension DetailViewController: UIScrollViewDelegate {
         self.scrollView.maximumZoomScale = 4.0
         self.scrollView.showsVerticalScrollIndicator = false
         self.scrollView.showsHorizontalScrollIndicator = false
-//        self.scrollView.contentSize = self.imageView.frame.size
         self.scrollView.delegate = self
     }
     
@@ -88,6 +87,8 @@ extension DetailViewController: UIScrollViewDelegate {
 }
 
 extension DetailViewController: UIGestureRecognizerDelegate {
+//    single tap to hide/show textView
+//    double tap to zoom in and out of the image
     func setupTapGestures(){
         let singleTapGesture = UITapGestureRecognizer(target: self, action: #selector(detail))
         let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(zoom))

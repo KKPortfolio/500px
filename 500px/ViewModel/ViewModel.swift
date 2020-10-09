@@ -9,8 +9,6 @@ import Foundation
 import UIKit
 
 class ViewModel {
-    
-    
     var consumerKey = ""
     var photos: [Photo]!
     var numberOfItemsInRow = 3

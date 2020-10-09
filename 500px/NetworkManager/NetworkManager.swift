@@ -28,7 +28,7 @@ class NetworkManager {
                        "rpp": String(rpp),
                        "image_size[]": photoSizes.map{"\($0)"}.joined(separator: ",")
         ]
-        
+//        Alamofire Request
         AF.request(url,
                    method: .get,
                    parameters: headers,
@@ -53,6 +53,3 @@ class NetworkManager {
             }
     }
 }
-
-
-
