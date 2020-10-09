@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Popular-->
         <scene sceneID="fcF-L2-aZw">
             <objects>
                 <viewController id="5bh-PB-jnD" customClass="MainViewController" customModule="_00px" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,7 +57,7 @@
                             <constraint firstItem="OI1-vd-GBz" firstAttribute="leading" secondItem="2Tq-kn-eAo" secondAttribute="leadingMargin" id="gRT-9Q-3AF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="7Lw-6Z-en4"/>
+                    <navigationItem key="navigationItem" title="Popular" largeTitleDisplayMode="never" id="7Lw-6Z-en4"/>
                     <connections>
                         <outlet property="mainCollectionView" destination="OI1-vd-GBz" id="Yx4-Mg-Feh"/>
                         <segue destination="jlz-RT-eJN" kind="show" identifier="toPhotoDetail" id="Kzs-wB-vJ6"/>
@@ -109,7 +109,9 @@
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                     </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <blurEffect style="regular"/>
                             </visualEffectView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tsD-qZ-zoC">
@@ -117,8 +119,10 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xOj-cg-Hq3">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="427"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </imageView>
                                 </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="xOj-cg-Hq3" firstAttribute="centerX" secondItem="tsD-qZ-zoC" secondAttribute="centerX" id="OIK-EO-qLb"/>
                                     <constraint firstItem="xOj-cg-Hq3" firstAttribute="leading" secondItem="tsD-qZ-zoC" secondAttribute="leading" id="TEs-FT-XJy"/>

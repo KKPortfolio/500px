@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupCollectionView()
+        setupCollectionView()
         viewModel.photos = [Photo]()
         viewModel.getConsumerKey()
         self.getPhotos(resetPhotos: true, completion: nil)
@@ -45,9 +45,6 @@ extension MainViewController {
             completion?()
         }
     }
-    
-    
-    
 }
 
 extension MainViewController: MainLayoutDelegate {
@@ -110,6 +107,7 @@ extension MainViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! MainCollectionViewCell
+        cell.imageView.contentMode = .scaleAspectFill
         cell.photo = self.viewModel.photos?[indexPath.row]
         return cell
     }
